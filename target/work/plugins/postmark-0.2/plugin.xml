@@ -1,0 +1,27 @@
+<plugin name='postmark' version='0.2' grailsVersion='1.3.0.RC1 &gt; *'>
+  <author>Mike Wille</author>
+  <authorEmail>mike.wille@flowz.com</authorEmail>
+  <title>Provides integration with Postmark mail service</title>
+  <description>\
+This plugin provides an API with almost exact parity to the mail plugin.  Installing this plugin
+replaces the sendMail injected method with it's own.  Doing so allows use of Postmark without
+changing any code in your app or in the plugins your app depends on.
+
+It does not support attachments as Postmark doesn't provide that capability.  If attachments
+are used, it will be logged as an error and continue.
+</description>
+  <documentation>http://grails.org/plugin/postmark</documentation>
+  <resources>
+    <resource>BuildConfig</resource>
+    <resource>DataSource</resource>
+    <resource>UrlMappings</resource>
+    <resource>grails.plugins.postmark.PostmarkService</resource>
+  </resources>
+  <dependencies>
+    <plugin name='rest' version='0.3' />
+    <resolvers>
+      <resolver type='grailsPlugins' name='grailsPlugins' />
+    </resolvers>
+  </dependencies>
+  <behavior />
+</plugin>
