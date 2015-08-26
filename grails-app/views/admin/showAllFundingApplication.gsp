@@ -26,7 +26,7 @@
         <h1>Funding application for approval or rejection</h1>
 
         <div class="container">
-
+            abhhbhjsbbash9
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#pending">Pending</a></li>
                 <li><a href="#approved">Approved</a></li>
@@ -99,7 +99,7 @@
                         </tbody>
                     </table>
                 </div>
-
+<hr>
                 <div id="completed" class="tab-pane">
                     <h3>Completed Funds</h3>
                     <table id="table_funds_completed" style="width: 90%;margin-left: inherit"
