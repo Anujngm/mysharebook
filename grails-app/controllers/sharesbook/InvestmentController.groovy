@@ -46,9 +46,11 @@ class InvestmentController {
     @Secured('permitAll')
     def companyPageToInvest() {
         //Page to invest
+       println(""+params.exists)
         Long id = params.companyId as Long
         Company company = Company.findById(id)
-        render(view: "companyPageToInvest", model: [company: company])
+        Funding funding=Funding.findByCompany(company)
+        render(view: "companyPageToInvest", model: [company: company,funding:funding,exists:params.exists])
     }
 
     def springSecurityService
@@ -98,7 +100,7 @@ class InvestmentController {
                 redirect(controller: "investor", action: "createInvestorProfile")
                 return
             } else {
-                render(view: "InvestmentInfoPage", model: [companyId: params.companyId, perShareValue: params.companyShares])
+               render(view: "InvestmentInfoPage", model: [companyId: params.companyId, perShareValue: params.companyShares])
             }
         }
     }

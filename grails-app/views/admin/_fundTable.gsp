@@ -1,16 +1,17 @@
-<table id="table_funds_pending" style="width: 95%">
+
+<table id="table_funds_pending">
     <tbody class="table table-row-cell">
     <thead>
     <tr>
-        <th class="dt-head-left">Company Name</th>
-        <th class="dt-head-left">Amount Required</th>
-        <th class="dt-head-left">Loan Tenure</th>
-        <th class="dt-head-left">Rate of Interest</th>
-        <th class="dt-head-left">Repayment Scheme</th>
-        <th class="dt-head-left">Capital per Share</th>
-        <th class="dt-head-left">Date of submission</th>
-        <th class="dt-head-left">Status</th>
-        <th class="dt-head-left">Action</th>
+        <th class="dt-head-left">Company Name&nbsp;&nbsp;</th>
+        <th class="dt-head-left ">Amount Required&nbsp;&nbsp;</th>
+        <th class="dt-head-left">Loan Tenure&nbsp;&nbsp;</th>
+        <th class="dt-head-left">Rate of Interest&nbsp;&nbsp;</th>
+        <th class="dt-head-left">Repayment Scheme&nbsp;&nbsp;</th>
+        <th class="dt-head-left">Capital per Share&nbsp;&nbsp;</th>
+        <th class="dt-head-left">Date of submission&nbsp;&nbsp;</th>
+        <th class="dt-head-left">Status&nbsp;&nbsp;</th>
+        <th class="dt-head-right">Action&nbsp;&nbsp;&nbsp;</th>
     </tr>
     </thead>
     <tbody class="td-body-center">

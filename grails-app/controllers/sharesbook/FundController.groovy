@@ -46,6 +46,7 @@ class FundController {
         if (params.amount) {
             Funding fund = new Funding(params)
             fund.loanStatus = LoanStatus.PENDING
+            fund.rateOfInterest=4
             fund.company = company
             if (fund.validate()) {
                 fund.save(flush: true)

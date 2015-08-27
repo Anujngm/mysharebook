@@ -26,7 +26,7 @@
 <div class="col-md-10">
     <h1 style="text-align: center"><strong>Funding Application</strong></h1>
 
-    <form method="post" enctype="multipart/form-data" id="companyProfileForm_id"
+    <form method="post" id="companyProfileForm_id"
           action="${createLink(controller: "fund", action: "createFundingProfile")}">
         <div class="form-group">
             <label for="amountId" class="col-md-3">Loan amount:</label>

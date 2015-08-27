@@ -59,6 +59,21 @@
 
 <div class="col-md-2"></div>
 
+<div class="modal loading fade" id="loading" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            
+            <div class="modal-body">
+            <img src="${resource(dir: "images",file: "loading.gif")}"/>
+            </div>
+
+
+            
+        </div>
+    </div>
+</div>
+
+
 <script>
     function totalCostCalculate() {
         var numberOfShares = $("#investedNumberOfShare").val();
@@ -68,7 +83,7 @@
         $("#totalCost").val(totalvalue)
     }
     function saveByAjax() {
-        alert("inside saveByAjax");
+        $('#loading').modal('show');
         $.ajax({
             url: "${createLink(controller:'investment',action:'doInvestment')}",
             dataType: 'json',
@@ -79,7 +94,9 @@
                 totalCost: $("#totalCost").val()
             },
             success: function (temp) {
-                window.location.href = "${createLink(controller: "investment",action: "companyListToInvest")}";
+                %{--window.location.href = "${createLink(controller: "investment",action: "companyListToInvest")}";--}%
+                //   $("#article_"+id).hide();
+                //   $("#article_"+id).hide();
                 //   $("#article_"+id).hide();
                 //  $("#article_"+id+" td:nth-child(3)").text("max");
             },

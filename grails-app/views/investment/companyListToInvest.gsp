@@ -91,7 +91,7 @@
                                  src="${createLink(controller: "company", action: "loadImage", params: [imgName: currentCompany.companyImageName])}">
                         </g:if>
                         <g:else>
-                            <a href="${createLink(controller: "investment", action: "companyPageToInvest", params: [companyId: currentCompany.id])}">
+                            <a href="${createLink(controller: "investment", action: "companyPageToInvest", params: [companyId: currentCompany.id,exists:"${(currentCompany.id in listOfCompanyIdInvestedByUser)?true:false}"])}">
                                 <img class="img-responsive" alt="img"
                                      src="${createLink(controller: "company", action: "loadImage", params: [imgName: currentCompany.companyImageName])}">
                             </a>
@@ -121,10 +121,12 @@
                         </div>
                         <span class="size">
                             <g:if test="${currentCompany.id in listOfCompanyIdInvestedByUser}">
+                               %{--${boolean temp=true}--}%
                                 <span style="color:green" aria-hidden="true">Invested</span>
 
                             </g:if>
                             <g:else>
+                                %{--${boolean temp=false}--}%
                                 <strong><span style="color: red" aria-hidden="true">Not Invested</span></strong>
                             </g:else>
                         </span></div>
@@ -137,7 +139,7 @@
                         </g:if>
                         <g:else>
                             <a class="btn btn-primary"
-                               href="${createLink(controller: "investment", action: "companyPageToInvest", params: [companyId: currentCompany.id])}">Invest Now</a>
+                               href="${createLink(controller: "investment", action: "companyPageToInvest", params: [companyId: currentCompany.id,exists:"${(currentCompany.id in listOfCompanyIdInvestedByUser)?true:false}"])}">Invest Now</a>
                         </g:else>
                     </div>
                 </div>

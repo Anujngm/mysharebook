@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="sharesbook.Investment" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Investment Page</title>
@@ -11,50 +11,97 @@
 
 <body>
 <br><br>
-    <h1 style="text-align: center"><strong>Company Details for Investment</strong></h1>
-<div class="row" style="margin-left: 20px;margin-right: 20px">
-<div class="col-md-8">
-    <table class="table table-condensed">
-        <tr class="info">
-            <td>Company Name:</td><td>${company.companyName}</td>
-        </tr>
-        <tr class="info">
-            <td>Company Category:</td><td>${company.companyCategory}</td>
-        </tr>
-        <tr class="info">
-            <td>Company Address:</td><td>${company.companyAddress}</td>
-        </tr>
-        <tr class="info">
-            <td>Company OwnerId:</td><td>${company.user.id}</td>
-        </tr>
-        <tr class="info">
-            <td>Company Website:</td><td>${company.companyWebsite}</td>
-        </tr>
-        <tr class="info">
-            <td>Company Number Of Employee:</td><td>${company.companyNumberOfEmployee}</td>
-        </tr>
-        <tr class="info">
-            <td>Company Profile:</td><td>${company.user.profile}</td>
-        </tr>
-        <tr class="info">
-            <td>Company Market:</td><td>${company.companyMarket}</td>
-        </tr>
-        <br>
-    </table>
-    %{--<a class="btn btn-primary"--}%
-       %{--href="${createLink(controller: "investment", action: "doInvestment", params: [companyId: company.id, companyShares: company.companyCapitalPerShare])}">Prepare Investment</a>--}%
-</div>
 
-<div class="col-md-4">
-    <img src="${createLink(controller: "company", action: "loadImage", params: [imgName: company.companyImageName])}"
-         style="margin-top: 15px" height="200px" width="400px" class="img-thumbnail"/>
-</div>
-</div>
+<center><h1>Company Details for Investment</h1></center>
+
+<div class="row">
+
+    <div class="col-md-5">
+
+        <img src="${createLink(controller: "company", action: "loadImage", params: [imgName: company.companyImageName])}"
+             style="margin-top: 15px;margin-left: 20px" height="200px" width="500px" class="img-thumbnail"/>
+        <br><br>
+        <g:if test="${exists=="true"}">
+            <center>
+                Already INVESTED!!!<br>
+                <a href="${createLink(controller: "investment",action: "showMyInvestment")}">Show My Investment</a>
+            </center>
+        </g:if>
+        <g:elseif test="${funding.loanStatus.toString() != "Approved"}">
+            <center>
+                <span>Loan status is ${funding.loanStatus}!!! Cannot invest in this company...</span>
+            </center>
+        </g:elseif>
+        <g:else>
+            <center>
+                <a class="btn btn-success" href="${createLink(controller: "investment", action: "doInvestment", params: [companyId: company.id, companyShares: funding.capitalPerShare])}">Prepare Investment</a>
+            </center>
+        </g:else>
+    </div>
+
+    <div class="col-md-7">
+        <h1 class="product-title">${company.companyName}</h1>
+
+        <h3 class="product-code">Company Code : ${company.id}</h3>
 
 
-<br>
-<br>
-<br>
+        <hr>
+
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <h2>Company Details</h2>
+                Company Category:${company.companyCategory}<br>
+                Company Address:${company.companyAddress}<br>
+                Company OwnerId:${company.user.id}<br>
+                Company Website:<a href="${company.companyWebsite}">${company.companyWebsite}</a> <br>
+                Company Number Of Employee:${company.companyNumberOfEmployee}<br>
+                Company Profile:${company.user.profile}<br>
+                Company Market:${company.companyMarket}<br>
+            </div>
+
+            <div style="color:black" class="col-md-6">
+                <h2>Investment Details</h2>
+                Amount Required:$${funding.amount}<br>
+                Capital Per Share:$${funding.capitalPerShare}<br>
+                Rate of Interest:${funding.rateOfInterest}%<br>
+                Loan Status:${funding.loanStatus}<br>
+                Loan Tenture:${funding.loanTenure}${funding.loanTenureMonthOrYear}<br>
+                Repayment Scheme:${funding.repaymentScheme}<br>
+
+            </div>
+        </div>
+
+        <div class="details-description">
+            <p>Soon company info column will be added to company profile</p>
+        </div>
+
+        <div class="cart-actions">
+            <h3 class="incaps"><i class="glyphicon glyphicon-lock"></i>good deal to invest</h3>
+        </div>
+
+
+        <div class="">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#details">Details</a>
+                    %{--<a href="#details" data-toggle="tab">Details</a></li>--}%
+                <li><a href="#investment" data-toggle="tab">Funding</a></li>
+
+            </ul>
+
+            <div class="tab-content">
+                <div id="details">
+                </div>
+
+                <div class="tab-pane" id="investment">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <br>
 <br>
 

@@ -13,10 +13,9 @@
 
 <body>
 <div class="row">
-    <div class="col-md-1"></div>
 
-    <div class="col-md-11">
-        <h1>Funding application for approval or rejection</h1>
+    <div class="col-md-12">
+        <center><h1>Funding application for approval or rejection</h1></center>
 
         <div class="container">
             <ul class="nav nav-tabs">
@@ -52,14 +51,14 @@
         </div>
     </div>
 
-    <div class="col-md-1"></div>
 </div>
 <script>
+
     $(document).ready(function () {
         $(".nav-tabs a").click(function () {
             $(this).tab('show');
         });
-
+        getPendingFund();
     });
 </script>
 <script>
