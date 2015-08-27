@@ -10,9 +10,9 @@ def adminHomePage(){
 
 }
     def showAllFundingApplication(){
-        def approvedFund=Funding.findAllByLoanStatus(LoanStatus.APPROVED)
+//        def approvedFund=Funding.findAllByLoanStatus(LoanStatus.APPROVED)
 
-        [funding:Funding.findAll(),approvedFund:approvedFund]
+        [funding:Funding.findAll()]
     }
 
 
