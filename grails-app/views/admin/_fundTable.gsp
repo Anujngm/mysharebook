@@ -11,6 +11,7 @@
         <th class="dt-head-left">Capital per Share&nbsp;&nbsp;</th>
         <th class="dt-head-left">Date of submission&nbsp;&nbsp;</th>
         <th class="dt-head-left">Status&nbsp;&nbsp;</th>
+        <th class="dt-head-left">Company Profile</th>
         <th class="dt-head-right">Action&nbsp;&nbsp;&nbsp;</th>
     </tr>
     </thead>
@@ -26,6 +27,11 @@
             <td class="dt-body-left">$${fund.capitalPerShare}</td>
             <td class="dt-body-left">${fund.dateCreated.dateString}</td>
             <td class="dt-body-left">${fund.loanStatus.toString()}</td>
+            <td class="dt-body-left">
+
+                <a data-toggle="modal" data-dismiss="modal"
+                   href="${createLink(controller: "admin", action: "modalCompanyProfile",params: [id:"${fund.company.id}"])}" style="text-decoration:none">&nbsp;&nbsp;&nbsp;View Profile</a>
+            </td>
             <td class="dt-body-center" style="margin-right: 10px">
                 <br/>
                 <g:if test="${fund.loanStatus.toString() != "Approved"}">
@@ -36,7 +42,7 @@
                 </g:if>
                 <g:if test="${fund.loanStatus.toString() != "Rejected"}">
                     <a href="javascript:void(0)" class="btn btn-danger btn-sm"
-                       onclick="statusChangeByAjax('${fund.id}', '${com.LoanStatus.REJECTED.key}','${tab_status}')"><strong
+                       onclick="statusChangeByAjax('${fund.id}', 'reject','${tab_status}')"><strong
                             style="color: black">Reject</strong></a>
                     <br/>
                 </g:if>
@@ -52,3 +58,6 @@
     </g:each>
     </tbody>
 </table>
+
+
+

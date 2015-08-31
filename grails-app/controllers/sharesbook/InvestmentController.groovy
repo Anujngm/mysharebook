@@ -70,15 +70,16 @@ class InvestmentController {
         if (params.investmentCategory && params.companyId) {
             Company company = Company.findById(params.companyId as long)
             if (company) {
-                Investment investment1 = Investment.findByInvestorAndCompany(user.investor, company, null)
-                //checking if currently logged in user has already invested in the choosed company or not
-                //then control must be redirected to edit profile page
-                if (investment1) {
-                    temp = false
-                    flash.message = "U have already invested in this company"
-                    redirect(controller: "investment", action: "showMyInvestment")
-                    return
-                } else {
+//                Investment investment1 = Investment.findByInvestorAndCompany(user.investor, company, null)
+//                //checking if currently logged in user has already invested in the choosed company or not
+//                //then control must be redirected to edit profile page
+//
+//                if (investment1) {
+//                    temp = false
+//                    flash.message = "U have already invested in this company"
+//                    redirect(controller: "investment", action: "showMyInvestment")
+//                    return
+//                } else {
                     Investment investment = investmentService.addDataToInvestment(params, user, company)
                     if (investment.validate()) {
                         //send email to company and user both
@@ -89,7 +90,7 @@ class InvestmentController {
                     } else {
                         println(investment.errors.allErrors)
                     }
-                }
+//                }
             }
             println("going outside")
             render temp

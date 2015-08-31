@@ -76,10 +76,8 @@
 
 <div class="col-sm-12">
     <div class="col-sm-4"></div>
-
     <div class="col-sm-4">
         <sec:ifLoggedIn>
-
             <button type="button" class="btn btn-primary btn-lg"
                     style="z-index:999;border-radius: 7px;margin-left: 22px;width: auto"
                     id="createProfile" data-toggle="modal" data-target="#myModal">

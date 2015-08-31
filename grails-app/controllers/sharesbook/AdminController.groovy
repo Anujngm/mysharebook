@@ -6,19 +6,25 @@ class AdminController {
 
     def index() {}
 
-def adminHomePage(){
+    def adminHomePage() {
 
-}
-    def showAllFundingApplication(){
-//        def approvedFund=Funding.findAllByLoanStatus(LoanStatus.APPROVED)
-
-        [funding:Funding.findAll()]
     }
 
+    def showAllFundingApplication() {
+        [funding: Funding.findAll()]
+    }
 
-def fundingApplicationStatus(){
+    def saveComment(){
+//now save commentand render true to ajax call
+    }
 
-println("mad"+params.status)
-}
+    def modalCompanyProfile(Company company) {
+        [company:company]
+    }
+
+    def fundingApplicationStatus() {
+
+        println("mad" + params.status)
+    }
 
 }

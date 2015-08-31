@@ -1,4 +1,4 @@
-    <%@ page import="com.LoanStatus" contentType="text/html;charset=UTF-8" %>
+<%@ page import="com.LoanStatus" contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Funding Application</title>
@@ -12,6 +12,37 @@
 </head>
 
 <body>
+<!-- Modal -->
+<div class="modal fade" id="myRejectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Comment for rejection:</h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <input type="text" id="id" hidden="hidden">
+                    <input type="text" id="status" hidden="hidden">
+                    <input type="text" id="tab" hidden="hidden">
+
+                    <input type="text" id="comment">
+                    <input type="submit" id="submit" onclick="commentAndgetRejectFund()">
+
+
+
+                </div>
+            </div>
+
+            <div class="modal-footer" style="border: hidden">
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="row">
 
     <div class="col-md-12">
@@ -29,21 +60,25 @@
             <div class="tab-content">
                 <div id="pending" class="tab-pane fade in active">
                     <h3>Pending Funds</h3>
-                        <div id="pendingTable"></div>
+
+                    <div id="pendingTable"></div>
                 </div>
 
                 <div id="approved" class="tab-pane">
                     <h3>Approved Funds</h3>
+
                     <div id="approvedTable"></div>
                 </div>
 
                 <div id="rejected" class="tab-pane">
                     <h3>Rejected Funds</h3>
+
                     <div id="rejectedTable"></div>
                 </div>
 
                 <div id="completed" class="tab-pane">
                     <h3>Completed Funds</h3>
+
                     <div id="completedTable"></div>
                 </div>
             </div>
@@ -53,7 +88,6 @@
 
 </div>
 <script>
-
     $(document).ready(function () {
         $(".nav-tabs a").click(function () {
             $(this).tab('show');
@@ -62,6 +96,31 @@
     });
 </script>
 <script>
+    function rejectComment(id, status, tab) {
+        $("#id").val(id);
+        $("#status").val(status);
+        $("#tab").val(tab);
+        $("#myRejectModal").modal('show');
+
+    }
+    function commentAndgetRejectFund() {
+//now save and then call
+        $.ajax({
+            url: "${createLink(controller:'admin',action:'saveComment')}",
+            dataType: 'json',
+            data: {
+                id:$("#id").val,
+                comment: $("#comment").val
+            },
+            success: function (temp) {
+               statusChangeByAjax($("#id").val,$("#status").val,$("#tab").val)
+            },
+            error: function (request, status, error) {
+                alert(request)
+            }
+        });
+
+    }
     function getCompletedFund() {
         $.ajax({
             url: "${createLink(controller:'fund',action:'completedFund')}",
@@ -69,7 +128,7 @@
                 $("#completedTable").html(data)
             },
             error: function (request, status, error) {
-                alert("errror1 "+error)
+                alert("errror1 " + error)
             }
         });
     }
@@ -80,7 +139,7 @@
                 $("#pendingTable").html(data)
             },
             error: function (request, status, error) {
-                alert("errror1 "+error)
+                alert("errror1 " + error)
             }
         });
     }
@@ -91,7 +150,7 @@
                 $("#rejectedTable").html(data)
             },
             error: function (request, status, error) {
-                alert("errror1 "+error)
+                alert("errror1 " + error)
             }
         });
     }
@@ -103,14 +162,18 @@
                 $("#approvedTable").html(data)
             },
             error: function (request, status, error) {
-                alert("errror1 "+error)
+                alert("errror1 " + error)
             }
         });
     }
 
 
-    function statusChangeByAjax(id, status,tab) {
-        $.ajax({
+    function statusChangeByAjax(id, status, tab) {
+        if (status == "reject") {
+            rejectComment(id, "REJECTED", tab);
+        }
+        else{
+    $.ajax({
             url: "${createLink(controller:'fund',action:'fundingApplicationStatus')}",
             dataType: 'json',
             data: {
@@ -118,12 +181,13 @@
                 status: status
             },
             success: function (id) {
-                $("#fund_"+tab+"_"+id).hide();
+                $("#fund_" + tab + "_" + id).hide();
             },
             error: function (request, status, error) {
                 alert(request)
             }
         });
+        }
     }
 </script>
 </body>

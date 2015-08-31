@@ -78,27 +78,6 @@
         <div class="cart-actions">
             <h3 class="incaps"><i class="glyphicon glyphicon-lock"></i>good deal to invest</h3>
         </div>
-
-
-        <div class="">
-            <ul class="nav nav-tabs">
-                <li class="active">
-                    <a href="#details">Details</a>
-                    %{--<a href="#details" data-toggle="tab">Details</a></li>--}%
-                <li><a href="#investment" data-toggle="tab">Funding</a></li>
-
-            </ul>
-
-            <div class="tab-content">
-                <div id="details">
-                </div>
-
-                <div class="tab-pane" id="investment">
-                </div>
-
-            </div>
-
-        </div>
     </div>
 </div>
 

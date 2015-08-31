@@ -94,6 +94,9 @@
                 totalCost: $("#totalCost").val()
             },
             success: function (temp) {
+//                disabled.classNames('close()')
+                alert("success")
+                window.location.href = "${createLink(controller: "investment",action: "showMyInvestment")}";
                 %{--window.location.href = "${createLink(controller: "investment",action: "companyListToInvest")}";--}%
                 //   $("#article_"+id).hide();
                 //   $("#article_"+id).hide();

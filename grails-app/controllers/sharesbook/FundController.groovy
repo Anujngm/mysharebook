@@ -72,7 +72,6 @@ class FundController {
         fund.save(flush: true)
         render "${id}"
     }
-
-    def showFundingProfile() {
+     def showFundingProfile() {
     }
 }
