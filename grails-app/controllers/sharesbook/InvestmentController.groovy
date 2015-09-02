@@ -11,7 +11,7 @@ class InvestmentController {
 
     @Secured('permitAll')
     def userAlreadyInvested() {
-        flash.message = "U will be redirected to edit investement page soon"
+        flash.message = "Inactive email of company...response by postmark...value added to database"
         redirect(controller: "user", action: "HomePage")
         return
     }
@@ -89,11 +89,12 @@ class InvestmentController {
                         temp = true
                     } else {
                         println(investment.errors.allErrors)
+                   temp=false
                     }
 //                }
             }
             println("going outside")
-            render temp
+            render "${temp}"
 
         } else {
             if (!Investor.findByUser(user)) {

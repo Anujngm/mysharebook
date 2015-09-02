@@ -10,12 +10,12 @@
                 <li class="active" role="presentation"><a href="../user/HomePage.gsp">Home</a></li>
             <li role="presentation">
                 <sec:ifLoggedIn>
-                    <a href="${createLink(controller: "admin", action: "showAllFundingApplication")}">Funding Application</a>
+                    <a href="${createLink(controller: "admin", action: "showAllFundingApplication")}">Funding Applications</a>
                 </sec:ifLoggedIn>
             </li>
                 <li role="presentation">
                     <sec:ifLoggedIn>
-                        %{--<a href="${createLink(controller: "investor", action: "showUserInvestorProfile")}">Investor Profile</a>--}%
+                        <a href="${createLink(controller: "admin", action: "showAllInvestor")}">Investors Profile</a>
                     </sec:ifLoggedIn>
                 </li>
                 <li role="presentation">

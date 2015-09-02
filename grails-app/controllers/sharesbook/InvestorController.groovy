@@ -9,6 +9,8 @@ class InvestorController {
     @Secured('permitAll')
     def index() {}
 
+
+
     def springSecurityService
 
     @Secured('permitAll')

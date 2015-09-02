@@ -8,9 +8,8 @@
 <script src="${resource(dir: 'js', file: 'bootstrap.min.js')}"></script>
 <script src="${resource(dir: 'js', file: 'jquery.dataTables.min.js')}"></script>
 </head>
-%{--send selected company id with other data--}%
+<br><br>
 <div class="col-md-2"></div>
-
 <div class="col-md-8">
     <h1 style="text-align: center"><strong>Enter Details to make Investment</strong></h1>
     <form>
@@ -35,8 +34,8 @@
         <div class="form-group">
             <label for="totalCostBtn_id" class="col-md-3">Investment Total Cost:</label>
 
-            <div class="col-md-9">
-                <span id="total"></span><br>
+            <div class="col-md-9">$
+                <span id="total">0</span><br>
                 <input type="button" class="btn btn-default" id="totalCostBtn_id" name="totalCostBtn"
                        onclick="totalCostCalculate()"
                        value="Calculate Total Cost">
@@ -60,15 +59,13 @@
 <div class="col-md-2"></div>
 
 <div class="modal loading fade" id="loading" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            
+    <div class="modal-dialog"  >
+        <div class="modal-content" style="text-align:center;margin-top: 200px;margin-left: 200px;width: 170px">
+
             <div class="modal-body">
-            <img src="${resource(dir: "images",file: "loading.gif")}"/>
+                <img src="${resource(dir: "images", file: "loading2.gif")}"/>
             </div>
 
-
-            
         </div>
     </div>
 </div>
@@ -83,7 +80,10 @@
         $("#totalCost").val(totalvalue)
     }
     function saveByAjax() {
-        $('#loading').modal('show');
+        $("#loading").modal({
+            backdrop: 'static',
+            keyboard: false
+        });
         $.ajax({
             url: "${createLink(controller:'investment',action:'doInvestment')}",
             dataType: 'json',
@@ -94,14 +94,7 @@
                 totalCost: $("#totalCost").val()
             },
             success: function (temp) {
-//                disabled.classNames('close()')
-                alert("success")
                 window.location.href = "${createLink(controller: "investment",action: "showMyInvestment")}";
-                %{--window.location.href = "${createLink(controller: "investment",action: "companyListToInvest")}";--}%
-                //   $("#article_"+id).hide();
-                //   $("#article_"+id).hide();
-                //   $("#article_"+id).hide();
-                //  $("#article_"+id+" td:nth-child(3)").text("max");
             },
             error: function (request, status, error) {
                 window.location.href = "${createLink(controller: "investment",action: "userAlreadyInvested")}";

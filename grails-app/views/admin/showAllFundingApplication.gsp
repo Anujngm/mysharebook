@@ -24,14 +24,12 @@
 
             <div class="modal-body">
                 <div class="col-md-12">
-                    <input type="text" id="id" hidden="hidden">
+                    <input type="number" id="id" hidden="hidden">
                     <input type="text" id="status" hidden="hidden">
                     <input type="text" id="tab" hidden="hidden">
 
                     <input type="text" id="comment">
                     <input type="submit" id="submit" onclick="commentAndgetRejectFund()">
-
-
 
                 </div>
             </div>
@@ -97,26 +95,25 @@
 </script>
 <script>
     function rejectComment(id, status, tab) {
-        $("#id").val(id);
+        $("#id").val(id)
         $("#status").val(status);
         $("#tab").val(tab);
         $("#myRejectModal").modal('show');
-
     }
     function commentAndgetRejectFund() {
-//now save and then call
         $.ajax({
             url: "${createLink(controller:'admin',action:'saveComment')}",
             dataType: 'json',
             data: {
-                id:$("#id").val,
-                comment: $("#comment").val
+                id: $("#id").val(),
+                comment: $("#comment").val()
             },
             success: function (temp) {
-               statusChangeByAjax($("#id").val,$("#status").val,$("#tab").val)
+                $("#myRejectModal").modal('hide');
+                statusChangeByAjax($("#id").val(), $("#status").val(), $("#tab").val())
             },
             error: function (request, status, error) {
-                alert(request)
+                alert("error2" + request)
             }
         });
 
@@ -172,21 +169,21 @@
         if (status == "reject") {
             rejectComment(id, "REJECTED", tab);
         }
-        else{
-    $.ajax({
-            url: "${createLink(controller:'fund',action:'fundingApplicationStatus')}",
-            dataType: 'json',
-            data: {
-                id: id,
-                status: status
-            },
-            success: function (id) {
-                $("#fund_" + tab + "_" + id).hide();
-            },
-            error: function (request, status, error) {
-                alert(request)
-            }
-        });
+        else {
+            $.ajax({
+                url: "${createLink(controller:'fund',action:'fundingApplicationStatus')}",
+                dataType: 'json',
+                data: {
+                    id: id,
+                    status: status
+                },
+                success: function (id) {
+                    $("#fund_" + tab + "_" + id).hide();
+                },
+                error: function (request, status, error) {
+                    alert(request)
+                }
+            });
         }
     }
 </script>
