@@ -9,6 +9,7 @@
     <script src="${resource(dir: 'js',file: 'jquery.validate.min.js')}"></script>
 </head>
 <body>
+
 <h1 style="text-align: center"><strong>Enter Login Details</strong></h1>
 
 <div id='login' style="margin-top: 10%;margin-left: 30%">

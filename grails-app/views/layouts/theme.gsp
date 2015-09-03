@@ -1990,5 +1990,19 @@
     })();
     /* ]]> */
 </script>
+<script>
+    $("#j_password").keydown(function(event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            $("#submit").click();
+        }
+    });
+    $('#ModalLogin').on('shown.bs.modal', function () {
+        $('#j_username').focus();
+    })
+    $('#ModalSignup').on('shown.bs.modal', function () {
+        $('#username_id').focus();
+    })
+</script>
 </body>
 </html>

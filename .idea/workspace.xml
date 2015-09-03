@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7be21f0-275f-4a68-9430-4ebcd59bbea1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sharesbook/UserController$_loadAllImages_closure1.class" afterPath="$PROJECT_DIR$/target/classes/sharesbook/UserController$_loadAllImages_closure1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sharesbook/UserController$_loadAllImages_closure1_closure2.class" afterPath="$PROJECT_DIR$/target/classes/sharesbook/UserController$_loadAllImages_closure1_closure2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sharesbook/UserController.class" afterPath="$PROJECT_DIR$/target/classes/sharesbook/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sharesbook/UserService$_forgetPassword_closure2.class" afterPath="$PROJECT_DIR$/target/classes/sharesbook/UserService$_forgetPassword_closure2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/sharesbook/UserService.class" afterPath="$PROJECT_DIR$/target/classes/sharesbook/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/sharesbook/UserController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/sharesbook/UserController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/sharesbook/UserService.groovy" afterPath="$PROJECT_DIR$/grails-app/services/sharesbook/UserService.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/user/resetPassword.gsp" afterPath="$PROJECT_DIR$/grails-app/views/user/resetPassword.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/stacktrace.log" afterPath="$PROJECT_DIR$/target/stacktrace.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/login/auth.gsp" afterPath="$PROJECT_DIR$/grails-app/views/login/auth.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/theme.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/theme.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SharesBook.iws" />
@@ -41,28 +34,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InvestmentController.groovy" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/sharesbook/InvestmentController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6964285">
-              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-              <folding>
-                <element signature="e#20#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="showFundingProfile.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/fund/showFundingProfile.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5306122">
-              <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CompanyService.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/services/sharesbook/CompanyService.groovy">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,11 +87,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.groovy" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/sharesbook/UserController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3321492">
+            <state vertical-scroll-proportion="-7.48">
               <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/login/auth.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.367347">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="themeAll.gsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/themeAll.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.625">
+              <caret line="132" column="73" selection-start-line="132" selection-start-column="73" selection-end-line="132" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theme.gsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/theme.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.83114445">
+              <caret line="2007" column="7" selection-start-line="2007" selection-start-column="7" selection-end-line="2007" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -129,8 +130,8 @@
       <file leaf-file-name="_userSignUP.gsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/user/_userSignUP.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.244898">
-              <caret line="77" column="0" selection-start-line="58" selection-start-column="6" selection-end-line="77" selection-end-column="0" />
+            <state vertical-scroll-proportion="-10.387755">
+              <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -149,7 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/grails-app/views/investor/createInvestorProfile.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/company/createCompanyProfile.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/company/raiseFund.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/layouts/themeAll.gsp" />
@@ -171,7 +171,6 @@
         <option value="$PROJECT_DIR$/grails-app/views/user/forgetPassword.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/sharesbook/FundController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/sharesbook/RejectComment.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/layouts/theme.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/sharesbook/InvestorController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/admin/showUserAllInvestor.gsp" />
         <option value="$PROJECT_DIR$/grails-app/domain/sharesbook/Investor.groovy" />
@@ -200,6 +199,8 @@
         <option value="$PROJECT_DIR$/grails-app/views/user/resetPassword.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/sharesbook/UserController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/sharesbook/UserService.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/login/auth.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/layouts/theme.gsp" />
       </list>
     </option>
   </component>
@@ -1195,7 +1196,7 @@
       <workItem from="1441087119020" duration="5716000" />
       <workItem from="1441171914989" duration="3908000" />
       <workItem from="1441176855078" duration="15747000" />
-      <workItem from="1441258756751" duration="17764000" />
+      <workItem from="1441258756751" duration="20321000" />
     </task>
     <task id="LOCAL-00001" summary="Using git">
       <created>1440586865731</created>
@@ -1219,10 +1220,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="656022000" />
+    <option name="totallyTimeSpent" value="658579000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="51" y="52" width="1305" height="716" extended-state="1" />
+    <frame x="51" y="52" width="1305" height="716" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1288,13 +1289,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/views/investment/companyListToInvest.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.428571">
-          <caret line="93" column="220" selection-start-line="93" selection-start-column="220" selection-end-line="93" selection-end-column="220" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/investment/companyPageToInvest.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.265306">
@@ -1327,14 +1321,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/theme.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1272728">
-          <caret line="740" column="22" selection-start-line="740" selection-start-column="22" selection-end-line="740" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/investor/createInvestorProfile.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1351,18 +1337,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/themeAll.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-82.5">
-          <caret line="132" column="73" selection-start-line="132" selection-start-column="73" selection-end-line="132" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/work/plugins/jquery-1.11.1/web-app/js/jquery/jquery-1.11.1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="173" column="0" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1678,14 +1657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/user/_userSignUP.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.244898">
-          <caret line="77" column="0" selection-start-line="58" selection-start-column="6" selection-end-line="77" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/user/resetPassword.gsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.055658627">
@@ -1704,8 +1675,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/sharesbook/UserController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3321492">
+        <state vertical-scroll-proportion="-7.48">
           <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/login/auth.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.367347">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/themeAll.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625">
+          <caret line="132" column="73" selection-start-line="132" selection-start-column="73" selection-end-line="132" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/user/_userSignUP.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.387755">
+          <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/theme.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83114445">
+          <caret line="2007" column="7" selection-start-line="2007" selection-start-column="7" selection-end-line="2007" selection-end-column="7" />
           <folding />
         </state>
       </provider>
