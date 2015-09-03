@@ -9,7 +9,13 @@
 <html>
 <head>
     <title>Investor Profile</title>
-    <meta name="layout" content="themeAll"/>
+  <sec:ifAnyGranted roles="ADMIN">
+    <meta name="layout" content="headerFooter"/>
+  </sec:ifAnyGranted>
+    <sec:ifAnyGranted roles="INVESTOR">
+        <meta name="layout" content="themeAll"/>
+    </sec:ifAnyGranted>
+
     <link href="${resource(dir: 'css', file: 'bootstrap.min.css')}" rel="stylesheet">
     <script src="${resource(dir: 'js', file: 'jquery-1.11.3.min.js')}"></script>
     <script src="${resource(dir: 'js', file: 'bootstrap.min.js')}"></script>

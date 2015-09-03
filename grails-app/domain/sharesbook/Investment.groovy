@@ -10,8 +10,11 @@ class Investment {
     InvestmentStatus investmentStatus
     int investedNumberOfShare
     String totalCost
+    String rejectComment
+    String rejectDocument
 
     static belongsTo = [user: User]
+
     static constraints = {
         company nullable: false
         investor nullable: false
@@ -20,5 +23,7 @@ class Investment {
         investedNumberOfShare nullable: false
         totalCost nullable: false
         user nullable: false
+        rejectComment nullable: true, blank: false
+        rejectDocument nullable: true
     }
 }

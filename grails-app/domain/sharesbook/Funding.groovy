@@ -13,9 +13,13 @@ class Funding {
     Long capitalPerShare
     Date dateCreated
     Date lastUpdated
+    String rejectComment
+    String rejectDocument
 
     static hasOne = [company: Company]
 
     static constraints = {
+        rejectComment nullable: true,blank: false
+        rejectDocument nullable: true
     }
 }

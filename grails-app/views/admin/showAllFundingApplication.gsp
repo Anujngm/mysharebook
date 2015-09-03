@@ -48,10 +48,10 @@
 
         <div class="container">
             <ul class="nav nav-tabs">
-                <li class="active"><a href="#pending" onclick="getPendingFund()">Pending</a></li>
-                <li><a href="#approved" onclick="getApprovedFund()">Approved</a></li>
-                <li><a href="#rejected" onclick="getRejectedFund()">Rejected</a></li>
-                <li><a href="#completed" onclick="getCompletedFund()">Completed</a></li>
+                <li class="active"><a href="#pending" onclick="getPendingFund()">Pending Funds</a></li>
+                <li><a href="#approved" onclick="getApprovedFund()">Approved Funds</a></li>
+                <li><a href="#rejected" onclick="getRejectedFund()">Rejected Funds</a></li>
+                <li><a href="#completed" onclick="getCompletedFund()">Completed Funds</a></li>
             </ul>
 
 

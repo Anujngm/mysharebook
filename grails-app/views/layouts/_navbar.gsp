@@ -7,7 +7,7 @@
         <div>
 
             <ul class="nav navbar-nav">
-                <li class="active" role="presentation"><a href="../user/HomePage.gsp">Home</a></li>
+                <li class="active" role="presentation"><a href="${createLink(controller: "admin",action: "adminHomePage")}">Home</a></li>
             <li role="presentation">
                 <sec:ifLoggedIn>
                     <a href="${createLink(controller: "admin", action: "showAllFundingApplication")}">Funding Applications</a>
@@ -20,7 +20,7 @@
                 </li>
                 <li role="presentation">
                     <sec:ifLoggedIn>
-                        %{--<a href="${createLink(controller: "investment", action: "companyListToInvest")}">Do Investment</a>--}%
+                        <a href="${createLink(controller: "admin", action: "showAllInvestmentApplication")}">Investment Application</a>
                     </sec:ifLoggedIn>
                 </li>
                 <li role="presentation">

@@ -7,17 +7,20 @@ public enum InvestmentStatus {
     REJECTED('Rejected')
 
     final String value
-   InvestmentStatus(String value)
-    {
-        this.value=value
+
+    InvestmentStatus(String value) {
+        this.value = value
     }
 
-String toString(){
-    return this.value
-}
+    String toString() {
+        return this.value
+    }
 
-    String getValue(){
+    String getValue() {
         return value
     }
 
+    String getKey() {
+        return name()
+    }
 }

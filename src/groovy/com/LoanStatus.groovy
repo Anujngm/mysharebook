@@ -8,18 +8,19 @@ public enum LoanStatus {
 
     final String value
 
-    LoanStatus(String value)
-    {
-        this.value=value
+    LoanStatus(String value) {
+        this.value = value
     }
 
     String toString() {
         return this.value
     }
-    String getValue(){
+
+    String getValue() {
         return value
     }
-    String getKey(){
+
+    String getKey() {
         return name()
     }
 }

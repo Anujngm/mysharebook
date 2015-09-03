@@ -1,4 +1,7 @@
-
+<g:if test="${funding.empty}">
+    <center><h3 class="incaps">NO FUND IS IN ${tab_status} STATUS!!!</h3></center>
+</g:if>
+<g:else>
 <table id="table_funds_pending">
     <tbody class="table table-row-cell">
     <thead>
@@ -58,6 +61,6 @@
     </g:each>
     </tbody>
 </table>
-
+</g:else>
 
 

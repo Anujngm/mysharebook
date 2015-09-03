@@ -108,13 +108,13 @@
         rules: {},
         messages: {
             amount: {
-                required: "Please enter loan amount"
+                required: "Please enter funding amount"
             },
             repaymentScheme: {
                 required: "Please select payment scheme"
             },
             loanTenure: {
-                required: "Please enter loan tenure"
+                required: "Please enter funding tenure"
             },
             capitalPerShare: {
                 required: "Please enter capital per share for your company"

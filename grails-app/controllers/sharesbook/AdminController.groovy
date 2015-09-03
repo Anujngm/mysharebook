@@ -11,6 +11,10 @@ class AdminController {
 
     }
 
+    def showAllInvestmentApplication() {
+
+    }
+
     def showInvestorUserProfile() {
         User user = User.findById(params.id)
         [user: user]
@@ -18,7 +22,7 @@ class AdminController {
 
     def showInvestorInvestmentProfile(User user) {
         def investmentList = Investment.findAllByUser(user)
-       render (view: "/investment/showMyInvestment",model: [investments:investmentList])
+        render(view: "/investment/showMyInvestment", model: [investments: investmentList])
     }
 
     def showAllInvestor() {
@@ -30,14 +34,27 @@ class AdminController {
         [funding: Funding.findAll()]
     }
 
+    def saveInvestmentRejectionComment(Long id,String comment) {
+        boolean temp;
+        Investment investment=Investment.findById(id)
+        investment.rejectComment = comment
+        if (investment.validate()) {
+            investment.save(flush: true)
+            temp = true
+        } else {
+            temp = false
+        }
+        render "${temp}"
+    }
+
     def saveComment(Long id, String comment) {
-//now save commentand render true to ajax call
+        //now save commentand render true to ajax call
         boolean temp;
         println("hhhhh========" + id + "" + comment)
-        Company company = Company.findById(id)
-        company.rejectComment = comment
-        if (company.validate()) {
-            company.save(flush: true)
+Funding funding=Funding.findById(id)
+        funding.rejectComment = comment
+        if (funding.validate()) {
+            funding.save(flush: true)
             temp = true
         } else {
             temp = false
