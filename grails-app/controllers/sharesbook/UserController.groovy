@@ -22,12 +22,13 @@ class UserController {
         if (params.tokenId && params.password) {
             User user = User.findByTokenToResetPassword(params.tokenId.toString())
             if (!user) {
-                flash.message = "Cannot resolve user session"
+                flash.message = "Sorry!!! Link Expired"
                 redirect(controller: "user", action: "HomePage")
                 return
             }
-            if (userService.resetPassword(user)) {
-                redirect(controller: "login")
+            if (userService.resetPassword(user, params.password)) {
+                flash.message = "Password Changed"
+                redirect(controller: "user", action: "HomePage")
                 return
             } else {
                 flash.message = "Sorry!!! Link Expired"
@@ -51,7 +52,9 @@ class UserController {
                 redirect(controller: "user", action: "forgetPassword")
                 return
             } else if (!user.isTokenValid) {
-                userService.forgetPassword(user, params.email)
+                String token = UUID.randomUUID()
+                def myLink = g.createLink(controller: "user", action: "resetPassword", params: [tokenId: token], absolute: true)
+                userService.forgetPassword(user, params.email, myLink, token)
                 flash.message = "Access your email account to reset your password"
                 redirect(controller: "user", action: "HomePage")
                 return
@@ -71,13 +74,13 @@ class UserController {
         if (user) {
             Role role = new Role(authority: "ADMIN")
             println(user.getAuthorities().authority[0])
-            if(user.getAuthorities().authority[0]=="ADMIN"){
+            if (user.getAuthorities().authority[0] == "ADMIN") {
                 println("admin inside")
-                redirect(controller: "admin",action: "adminHomePage")
+                redirect(controller: "admin", action: "adminHomePage")
                 return
-            }else {
+            } else {
                 println("admin else inside")
-                render(view: "HomePage",model:[imageList: loadAllImages()])
+                render(view: "HomePage", model: [imageList: loadAllImages()])
             }
 
         } else {

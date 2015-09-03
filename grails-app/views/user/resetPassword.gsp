@@ -22,7 +22,7 @@
 <div class="col-md-1"></div>
 
 <div class="col-md-10">
-    <form method="get" action="${createLink(controller: "user", action: "resetPassword")}">
+    <form method="get" id="userSinghUpForm" action="${createLink(controller: "user", action: "resetPassword")}">
 <input type="text" style="visibility: hidden" name="tokenId" value='${params.tokenId}'>
     <div class="col-md-6">
         <div class="form-group">
@@ -53,5 +53,23 @@
 </div>
 
 <div class="col-md-1"></div>
+<script>
+    $("#userSinghUpForm").validate({
+        rules: {},
+        messages: {
+            password: {
+                minlength: "Password must contain 5 charecters",
+                required: "Please enter password"
+            },
+            confirm_password: {
+                minlength: "Confirm Password must contain 5 charecters",
+                required: "Please enter Confirm password",
+                equalTo: "Please enter the password same as above"
+            }
+
+        }
+    });
+</script>
+
 </body>
 </html>
