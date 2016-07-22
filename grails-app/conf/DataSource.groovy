@@ -17,7 +17,7 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://localhost/SharesBook?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:mysql://localhost/SharesBook?autoreconnect=true"
             username = "root"
             password = "nextdefault"
         }
